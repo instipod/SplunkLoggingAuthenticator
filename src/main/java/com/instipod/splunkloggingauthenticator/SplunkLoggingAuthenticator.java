@@ -66,8 +66,8 @@ public class SplunkLoggingAuthenticator implements Authenticator {
                 HttpURLConnection http = (HttpURLConnection) con;
                 http.setRequestMethod("POST"); // PUT is another valid option
                 http.setDoOutput(true);
-                http.setConnectTimeout(2);
-                http.setReadTimeout(2);
+                http.setConnectTimeout(2000);
+                http.setReadTimeout(2000);
                 http.setFixedLengthStreamingMode(length);
                 http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
                 http.setRequestProperty("Authorization", "Splunk " + config.getConfig().get(SplunkLoggingAuthenticatorFactory.CONFIG_TOKEN));
